@@ -1,0 +1,2 @@
+class SharedHistory < ApplicationRecord
+end
