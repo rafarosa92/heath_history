@@ -19,4 +19,9 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+  config.default_formatter = "documentation" if config.files_to_run.one?
+  
+  config.before(:suite) do
+      FactoryBot.reload
+  end
 end
