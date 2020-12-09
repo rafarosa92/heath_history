@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  prescriptions: 
+  date: 2020-12-09 20:50:02
+  return_date: 2020-12-09 20:50:02
+
+two:
+  title: MyString
+  prescriptions: 
+  date: 2020-12-09 20:50:02
+  return_date: 2020-12-09 20:50:02
