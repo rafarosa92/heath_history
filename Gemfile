@@ -11,9 +11,13 @@ gem 'sass-rails', '>= 6'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'bootstrap_sb_admin_base_v2'
 gem 'jquery-rails'
-gem 'turbolinks'
+
+#gem 'bootstrap_sb_admin_base_v2'
+
+#gem 'turbolinks'
+#gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
+#gem "font-awesome-rails"
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
