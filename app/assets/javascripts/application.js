@@ -6,6 +6,5 @@
 //= require chart
 //= require chart-area-demo
 //= require chart-pie-demo
-
-// require bootstrap_sb_admin_base_v2
+// require turbolinks
 // require_tree .
