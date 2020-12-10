@@ -1,0 +1,92 @@
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+  <!-- Sidebar - Brand -->
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<%= root_path %>">
+    <div class="sidebar-brand-icon rotate-n-15">
+      <i class="fas fa-laugh-wink"></i>
+    </div>
+    <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+  </a>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item">
+    <a class="nav-link" href="<%= root_path %>">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Dashboard</span></a>
+  </li>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    Interface
+  </div>
+
+  <!-- Nav Item - Pages Collapse Menu -->
+  <% active_context = active_link?(includes: ["buttons", "cards"]) %>
+
+  <%= nav_context :components, "Components", icon: "cog", active_link: active_context do %>
+    <h6 class="collapse-header">Custom Components:</h6>
+    <%= active_link_to "Buttons", root_path(), class: "collapse-item" %>
+    <%= active_link_to "Cards", root_path(), class: "collapse-item" %>
+  <% end %>
+
+  <!-- Nav Item - Utilities Collapse Menu -->
+  <%= nav_context :utilities, "Utilities", icon: "wrench" do %>
+    <h6 class="collapse-header">Custom Utilities:</h6>
+    <%= active_link_to "Colors", root_path(), class: "collapse-item" %>
+    <%= active_link_to "Borders", root_path(), class: "collapse-item" %>
+    <%= active_link_to "Animations", root_path(), class: "collapse-item" %>
+    <%= active_link_to "Other", root_path(), class: "collapse-item" %>
+  <% end %>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    Addons
+  </div>
+
+  <!-- Nav Item - Pages Collapse Menu -->
+  <%= nav_context :pages, "Pages", icon: "folder" do %>
+    <h6 class="collapse-header">Login Screens:</h6>
+    <%= active_link_to "Login", root_path(), class: "collapse-item" %>
+    <%= active_link_to "Register", root_path(), class: "collapse-item" %>
+    <%= active_link_to "Forgot Password", root_path(), class: "collapse-item" %>
+    <div class="collapse-divider"></div>
+    <h6 class="collapse-header">Other Pages:</h6>
+    <%= active_link_to "404 Page", root_path(), class: "collapse-item" %>
+    <%= active_link_to "Blank Page", root_path(), class: "collapse-item" %>
+  <% end %>
+
+  <!-- Nav Item - Charts -->
+  <li class="nav-item <%= add_active_class(root_path()) %>">
+    <a class="nav-link" href="<%= root_path() %>">
+      <i class="fas fa-fw fa-chart-area"></i>
+      <span>Charts</span>
+    </a>
+  </li>
+
+  <!-- Nav Item - Tables -->
+  <li class="nav-item <%= add_active_class(root_path()) %>">
+    <a class="nav-link" href="<%= root_path() %>">
+      <i class="fas fa-fw fa-table"></i>
+      <span>Tables</span></a>
+  </li>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider d-none d-md-block">
+
+  <!-- Sidebar Toggler (Sidebar) -->
+  <div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+  </div>
+
+</ul>
+<!-- End of Sidebar -->
