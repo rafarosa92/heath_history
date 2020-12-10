@@ -1,7 +1,7 @@
-// require jquery
-//= require jquery3.5.1
-// require jquery_ujs
+//= require jquery3
+//= require jquery_ujs
 //= require jquery.easing
+//= require bootstrap
 //= require sb-admin-2
 //= require chart
 //= require chart-area-demo
