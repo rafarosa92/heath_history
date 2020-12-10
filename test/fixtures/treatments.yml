@@ -4,18 +4,14 @@ one:
   title: MyString
   description: MyString
   place: MyString
-  date: 2020-12-09 20:27:24
+  date: 2020-12-09 21:09:16
   kind: MyString
   kind_treatment: MyString
-  document: 
-  appointment: one
 
 two:
   title: MyString
   description: MyString
   place: MyString
-  date: 2020-12-09 20:27:24
+  date: 2020-12-09 21:09:16
   kind: MyString
   kind_treatment: MyString
-  document: 
-  appointment: two

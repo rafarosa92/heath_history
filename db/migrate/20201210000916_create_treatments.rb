@@ -7,8 +7,6 @@ class CreateTreatments < ActiveRecord::Migration[6.0]
       t.datetime :date
       t.string :kind
       t.string :kind_treatment
-      t.file :document
-      t.references :appointment, null: false, foreign_key: true
 
       t.timestamps
     end
