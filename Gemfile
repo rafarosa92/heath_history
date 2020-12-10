@@ -10,17 +10,19 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'sass-rails', '>= 6'
 
 gem 'bootsnap', '>= 1.4.2', require: false
-
 gem 'jquery-rails'
 
-#gem 'bootstrap_sb_admin_base_v2'
+# gem 'bootstrap_sb_admin_base_v2'
 
-#gem 'turbolinks'
-#gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
-#gem "font-awesome-rails"
+# gem 'turbolinks'
+# gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
+# gem "font-awesome-rails"
 
-group :development, :test do
+group :development do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 4.0.1'
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :development do
