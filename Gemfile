@@ -15,8 +15,8 @@ gem 'jquery-rails'
 # gem 'bootstrap_sb_admin_base_v2'
 
 # gem 'turbolinks'
-# gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
-# gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
 
 group :development do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
