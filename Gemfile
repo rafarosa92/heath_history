@@ -12,6 +12,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 
 group :development, :test do
+  gem 'faker'
   gem 'shoulda-matchers', '~> 4.0'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 4.0.1'
