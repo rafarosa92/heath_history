@@ -5,8 +5,7 @@ class CreateTreatments < ActiveRecord::Migration[6.0]
       t.text :description
       t.string :place
       t.datetime :date
-      t.string :kind
-      t.string :kind_treatment
+      t.integer :kind
 
       t.timestamps
     end

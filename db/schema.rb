@@ -1,4 +1,3 @@
-=======
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_015512) do
+ActiveRecord::Schema.define(version: 2020_12_11_002845) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,6 +36,55 @@ ActiveRecord::Schema.define(version: 2020_12_10_015512) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "appointments", force: :cascade do |t|
+    t.string "title"
+    t.datetime "date"
+    t.datetime "return_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "health_professional_user_id"
+    t.integer "patient_user_id"
+    t.index ["health_professional_user_id"], name: "index_appointments_on_health_professional_user_id"
+    t.index ["patient_user_id"], name: "index_appointments_on_patient_user_id"
+  end
+
+  create_table "exams", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "date"
+    t.string "place"
+    t.bigint "appointment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["appointment_id"], name: "index_exams_on_appointment_id"
+    t.index ["user_id"], name: "index_exams_on_user_id"
+  end
+
+  create_table "shared_histories", force: :cascade do |t|
+    t.datetime "expiration_date"
+    t.bigint "appointment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "shared_user_id"
+    t.integer "owner_user_id"
+    t.index ["appointment_id"], name: "index_shared_histories_on_appointment_id"
+    t.index ["owner_user_id"], name: "index_shared_histories_on_owner_user_id"
+    t.index ["shared_user_id"], name: "index_shared_histories_on_shared_user_id"
+  end
+
+  create_table "treatments", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "place"
+    t.datetime "date"
+    t.integer "kind"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_treatments_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -50,48 +99,10 @@ ActiveRecord::Schema.define(version: 2020_12_10_015512) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-    create_table "appointments", force: :cascade do |t|
-    t.string "title"
-    t.datetime "date"
-    t.datetime "return_date"
-    t.bigint "treatment_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["treatment_id"], name: "index_appointments_on_treatment_id"
-  end
-
-  create_table "exams", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.datetime "date"
-    t.string "place"
-    t.bigint "appointment_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["appointment_id"], name: "index_exams_on_appointment_id"
-  end
-
-  create_table "shared_histories", force: :cascade do |t|
-    t.datetime "expiration_date"
-    t.bigint "appointment_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["appointment_id"], name: "index_shared_histories_on_appointment_id"
-  end
-
-  create_table "treatments", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.string "place"
-    t.datetime "date"
-    t.string "kind"
-    t.string "kind_treatment"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "appointments", "treatments"
   add_foreign_key "exams", "appointments"
+  add_foreign_key "exams", "users"
   add_foreign_key "shared_histories", "appointments"
+  add_foreign_key "treatments", "users"
 end
