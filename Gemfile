@@ -11,6 +11,7 @@ gem 'sass-rails', '>= 6'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jquery-rails'
+gem 'devise'
 
 # gem 'bootstrap_sb_admin_base_v2'
 
