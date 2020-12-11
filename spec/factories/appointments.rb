@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :appointment do
-    title         { Faker::String.random }
+    sequence(:title) { |n| "Appointment #{n}" }
     prescriptions { Faker::File.file_name }
     date          { Time.zone.now }
     return_date   { Time.zone.now + 1.week }
