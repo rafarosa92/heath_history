@@ -14,6 +14,7 @@ gem 'devise'
 group :development, :test do
   gem 'shoulda-matchers', '~> 4.0'
   gem 'factory_bot_rails'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'rspec-rails', '~> 4.0.1'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
