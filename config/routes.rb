@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   get 'home/index'
 
   resources :appointments
+  resources :treatments
+  resources :shared_histories
+  resources :exams
 end

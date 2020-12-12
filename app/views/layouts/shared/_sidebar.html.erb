@@ -28,27 +28,29 @@
   </div>
 
   <!-- Nav Item - Pages Collapse Menu -->
-  <% active_context = active_link?(includes: ["buttons", "cards"]) %>
+  <% active_appointments = active_link?(includes: ["appointments"]) %>
+  <% active_exams = active_link?(includes: ["exams"]) %>
+  <% active_treatments = active_link?(includes: ["treatments"]) %>
 
-  <%= nav_context :appointments, "Consultas", icon: "file", active_link: active_context do %>
+  <%= nav_context :appointments, "Consultas", icon: "file", active_link: active_appointments do %>
     <h6 class="collapse-header">Informação Consulta:</h6>
-    <%= active_link_to "Listar Consultas", root_path(), class: "collapse-item" %>
-    <%= active_link_to "Cadastrar Consultas", root_path(), class: "collapse-item" %>
+    <%= active_link_to "Listar Consultas", appointments_path(), class: "collapse-item" %>
+    <%= active_link_to "Cadastrar Consultas", new_appointment_path(), class: "collapse-item" %>
   <% end %>
 
   <!-- Nav Item - Exams Collapse Menu -->
-  <%= nav_context :exams, "Exames", icon: "file-medical" do %>
+  <%= nav_context :exams, "Exames", icon: "file-medical", active_link: active_exams do %>
     <h6 class="collapse-header">Informação Exames:</h6>
-    <%= active_link_to "Listar Exames", root_path(), class: "collapse-item" %>
-    <%= active_link_to "Cadastrar Exames", root_path(), class: "collapse-item" %>
+    <%= active_link_to "Listar Exames", exams_path(), class: "collapse-item" %>
+    <%= active_link_to "Cadastrar Exames", new_exam_path(), class: "collapse-item" %>
   <% end %>
 
   <!-- Nav Item - Treatments Collapse Menu -->
-  <%= nav_context :treatments, "Tratamentos", icon: "notes-medical" do %>
+  <%= nav_context :treatments, "Tratamentos", icon: "notes-medical", active_link: active_treatments do %>
     <h6 class="collapse-header">Informação Tratamentos:</h6>
-    <%= active_link_to "Listar Tratamentos", root_path(), class: "collapse-item" %>
-    <%= active_link_to "Cadastrar Tratamentos", root_path(), class: "collapse-item" %>
-  <% end %>  
+    <%= active_link_to "Listar Tratamentos", treatments_path(), class: "collapse-item" %>
+    <%= active_link_to "Cadastrar Tratamentos", new_treatment_path(), class: "collapse-item" %>
+  <% end %>
 
   <!-- Divider -->
   <hr class="sidebar-divider">
