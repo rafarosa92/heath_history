@@ -25,4 +25,14 @@
 
 <% end -%>
   </div>
+  <div class="row">
+    <div class="col-12 text-center mt-5">
+      <div class="actions btn-group">
+        <%%= link_to <%= index_helper %>_path, :class => "btn btn-outline-primary text-uppercase" do %>
+          <%%= icon('fas', 'arrow-circle-left', 'Voltar', class: 'strong') %>
+        <%% end %>
+        <%%= f.button icon('fas', 'save', 'salvar', class: 'strong'), class: "btn btn-primary text-uppercase" %>
+      </div>
+    </div>
+  </div>
 <%% end %>

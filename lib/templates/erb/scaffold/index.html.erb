@@ -25,18 +25,18 @@
                     <tbody>
                       <%% @<%= plural_table_name%>.each do |<%= singular_table_name %>| %>
                         <tr>
-                          <td class="py-0 align-middle text-center">
-                            <%%= link_to edit_<%= singular_table_name %>_path(<%= singular_table_name %>), :class => "text-info uppercase" do
+                          <td class="align-middle text-center">
+                            <%%= link_to edit_<%= singular_table_name %>_path(<%= singular_table_name %>), :class => "text-info uppercase" do %>
                               <%%= icon('fas', 'pencil-alt', class: 'strong') %>
                             <%% end %>
-                            <%%= link_to <%= singular_table_name %>, method: :delete, data: { confirm: 'Você tem certeza?' }, :class => "text-danger uppercase ml-4" do
+                            <%%= link_to <%= singular_table_name %>, method: :delete, data: { confirm: 'Você tem certeza?' }, :class => "text-danger uppercase ml-4" do %>
                               <%%= icon('fas', 'trash', class: 'strong') %>
                             <%% end %>
                           </td>
-                        </tr>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
-                        <td class="py-0 align-middle"><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+                        <td class="align-middle"><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
 <% end -%>
+                        </tr>
 
 
                       <%% end %>
