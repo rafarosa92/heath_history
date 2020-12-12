@@ -114,6 +114,10 @@ GEM
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
     ffi (1.13.1)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
+    font-awesome-sass (5.15.1)
+      sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.5)
@@ -272,6 +276,8 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker!
+  font-awesome-rails
+  font-awesome-sass (~> 5.15, >= 5.15.1)
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.2)

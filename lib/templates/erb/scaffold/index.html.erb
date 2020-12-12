@@ -1,0 +1,54 @@
+<section id="home-<%= plural_table_name.titleize.parameterize.underscore %>">
+  <div class="container-fluid">
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <span class="float-right">
+              <%%= link_to "Adicionar #{ @<%= plural_table_name %>.model_name.human }", new_<%= singular_table_name %>_path(), class: "btn btn-outline-secondary btn-sm text-uppercase float-right"%>
+            </span>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12">
+                <div class= "table-responsive">
+                  <table class="table table-striped table-bordered data-table nowrap w-100">
+                    <thead>
+                      <tr>
+                        <th colspan="1"></th>
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+                        <th><%= attribute.human_name %></th>
+<% end -%>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <%% @<%= plural_table_name%>.each do |<%= singular_table_name %>| %>
+                        <tr>
+                          <td class="py-0 align-middle text-center">
+                            <%%= link_to edit_<%= singular_table_name %>_path(<%= singular_table_name %>), :class => "text-info uppercase" do
+                              <%%= icon('fas', 'pencil-alt', class: 'strong') %>
+                            <%% end %>
+                            <%%= link_to <%= singular_table_name %>, method: :delete, data: { confirm: 'Você tem certeza?' }, :class => "text-danger uppercase ml-4" do
+                              <%%= icon('fas', 'trash', class: 'strong') %>
+                            <%% end %>
+                          </td>
+                        </tr>
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+                        <td class="py-0 align-middle"><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+<% end -%>
+
+
+                      <%% end %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

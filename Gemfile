@@ -10,6 +10,11 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'sass-rails', '>= 6'
+
+gem 'bootsnap', '>= 1.4.2', require: false
+gem 'devise'
+gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
 gem 'jquery-rails'
 
 # DEPLOY

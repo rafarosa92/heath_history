@@ -1,4 +1,10 @@
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require jquery.easing
+//= require bootstrap
+//= require sb-admin-2
+//= require chart
+//= require chart-area-demo
+//= require chart-pie-demo
+// require turbolinks
+// require_tree .
