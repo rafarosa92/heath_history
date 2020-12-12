@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shared user:</strong>
+  <%= @shared_history.shared_user_id %>
+</p>
+
+<p>
+  <strong>Owner user:</strong>
+  <%= @shared_history.owner_user_id %>
+</p>
+
+<p>
+  <strong>Appointment:</strong>
+  <%= @shared_history.appointment_id %>
+</p>
+
+<p>
+  <strong>Expiration date:</strong>
+  <%= @shared_history.expiration_date %>
+</p>
+
+<%= link_to 'Edit', edit_shared_history_path(@shared_history) %> |
+<%= link_to 'Back', shared_histories_path %>
