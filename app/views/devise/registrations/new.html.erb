@@ -16,7 +16,7 @@
                   <%= render "devise/shared/error_messages", resource: resource %>
 
                   <div class="form-group">
-                    <%#= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-user", id:"exampleFirstName", placeholder: "Informe seu e-mail" %>
+                    <%= f.text_field :name, autofocus: true, autocomplete: "email", class: "form-control form-control-user", id:"exampleFirstName", placeholder: "Informe seu nome" %>
                   </div>
 
                   <div class="form-group">
