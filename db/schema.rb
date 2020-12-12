@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_11_002845) do
+ActiveRecord::Schema.define(version: 2020_12_12_002824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 2020_12_11_002845) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.bigint "appointment_id", null: false
+    t.index ["appointment_id"], name: "index_treatments_on_appointment_id"
     t.index ["user_id"], name: "index_treatments_on_user_id"
   end
 
@@ -104,5 +106,6 @@ ActiveRecord::Schema.define(version: 2020_12_11_002845) do
   add_foreign_key "exams", "appointments"
   add_foreign_key "exams", "users"
   add_foreign_key "shared_histories", "appointments"
+  add_foreign_key "treatments", "appointments"
   add_foreign_key "treatments", "users"
 end

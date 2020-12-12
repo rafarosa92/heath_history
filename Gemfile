@@ -10,10 +10,9 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'sass-rails', '>= 6'
-
 gem 'jquery-rails'
 
-# deploy
+# DEPLOY
 gem 'capistrano', '~> 3.11'
 gem 'capistrano-passenger', '~> 0.2.0'
 gem 'capistrano-rails', '~> 1.4'
@@ -22,7 +21,7 @@ gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
-  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
   gem 'rspec-rails', '~> 4.0.1'
   gem 'shoulda-matchers', '~> 4.0'
 end
