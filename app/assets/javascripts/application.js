@@ -6,5 +6,5 @@
 //= require chart
 //= require chart-area-demo
 //= require chart-pie-demo
-// require turbolinks
+//= data-table
 // require_tree .
