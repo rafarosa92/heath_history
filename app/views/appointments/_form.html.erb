@@ -1,0 +1,51 @@
+<%= form_with(model: @appointment, local: true) do |f| %>
+  <% if @appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+        <% @appointment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="field col-12 col-md-4 mt-3">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+    <div class="field col-12 col-md-4 mt-3">
+    <%= f.label :health_professional_user_id %>
+    <%= f.text_field :health_professional_user_id, class: "form-control" %>
+  </div>
+
+    <div class="field col-12 col-md-4 mt-3">
+    <%= f.label :patient_user_id %>
+    <%= f.text_field :patient_user_id, class: "form-control" %>
+  </div>
+
+    <div class="field col-12 col-md-4 mt-3">
+    <%= f.label :date %>
+    <%= f.datetime_select :date, class: "form-control" %>
+  </div>
+
+    <div class="field col-12 col-md-4 mt-3">
+    <%= f.label :return_date %>
+    <%= f.datetime_select :return_date, class: "form-control" %>
+  </div>
+
+  </div>
+  <div class="row">
+    <div class="col-12 text-center mt-5">
+      <div class="actions btn-group">
+        <%= link_to appointments_path, :class => "btn btn-outline-primary text-uppercase" do %>
+          <%= icon('fas', 'arrow-circle-left', 'Voltar', class: 'strong') %>
+        <% end %>
+        <%= f.button icon('fas', 'save', 'salvar', class: 'strong'), class: "btn btn-primary text-uppercase" %>
+      </div>
+    </div>
+  </div>
+<% end %>
