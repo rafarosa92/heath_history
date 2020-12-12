@@ -1,11 +1,10 @@
 FactoryBot.define do
   factory :user do
-    name { Faker::Name.name }
-    avatar { Faker::Avatar.image(slug: "my-own-slug") }
     email { Faker::Internet.email }
-    password { "123456" }
-    password_confirmation { "123456" }
-    kind { :patient }
-    birthdate { Faker::Date.birthday }
+    avatar { Faker::Avatar.image(slug: 'my-own-slug') }
+    password { Faker::Alphanumeric.alphanumeric(number: 10) }
+    name { Faker::Artist.name }
+    birthdate { Faker::Date.between(from: '1980-09-23', to: '2000-09-25') }
+    kind { 1 }
   end
 end
