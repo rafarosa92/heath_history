@@ -1,10 +1,11 @@
 FactoryBot.define do
   factory :treatment do
     sequence(:title) { |n| "Treatment #{n}" }
+    appointment
+    user
     description { Faker::Lorem.paragraph }
-    place { "Some Place" }
+    place { 'Some Place' }
     date { Time.zone.now }
-    kind { :medicine }
-    document { Faker::File.file_name }
+    kind { 1 }
   end
 end
