@@ -275,9 +275,9 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   factory_bot_rails
+  faker!
   font-awesome-rails
   font-awesome-sass (~> 5.15, >= 5.15.1)
-  faker!
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.2)
