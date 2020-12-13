@@ -61,7 +61,7 @@
   </div>
 
   <!-- Nav Item - Pages Collapse Menu -->
-  <%= nav_context :history, "Meu Histórico", icon: "folder" do %>
+  <%= nav_context :history, "Meu Histórico", icon: "file-alt" do %>
     <h6 class="collapse-header">Login Screens:</h6>
     <%= active_link_to "Login", root_path(), class: "collapse-item" %>
     <%= active_link_to "Register", root_path(), class: "collapse-item" %>
@@ -75,24 +75,17 @@
   <!-- Nav Item - Charts -->
   <li class="nav-item <%= add_active_class(root_path()) %>">
     <a class="nav-link" href="<%= root_path() %>">
-      <i class="fas fa-fw fa-chart-area"></i>
-      <span>Charts</span>
+      <i class="fas fa-fw fa-share"></i>
+      <span>Históricos Compartilhados</span>
     </a>
   </li>
 
-  <!-- Nav Item - Tables -->
-  <li class="nav-item <%= add_active_class(root_path()) %>">
-    <a class="nav-link" href="<%= root_path() %>">
-      <i class="fas fa-fw fa-table"></i>
-      <span>Tables</span></a>
-  </li>
-
   <!-- Divider -->
-  <hr class="sidebar-divider d-none d-md-block">
+  <hr class="sidebar-divider">
 
   <!-- Heading -->
   <div class="sidebar-heading">
-    Configurações
+    Informações Extras
   </div>
 
   <%= nav_context :users, "Usuários", icon: "file", active_link: active_appointments do %>
