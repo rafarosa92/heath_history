@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users
 
   root to: 'home#index'
@@ -8,4 +9,6 @@ Rails.application.routes.draw do
   resources :treatments
   resources :shared_histories
   resources :exams
+  resources :users
+  
 end
