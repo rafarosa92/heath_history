@@ -37,6 +37,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
   gem 'mailcatcher'
+  gem 'devise_token_auth', '~> 1.1.4'
+
 end
 
 group :test do
