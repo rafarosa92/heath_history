@@ -40,17 +40,19 @@ ActiveRecord::Schema.define(version: 2020_12_12_002824) do
     t.string "title"
     t.datetime "date"
     t.datetime "return_date"
+    t.bigint "treatment_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "health_professional_user_id"
     t.integer "patient_user_id"
     t.index ["health_professional_user_id"], name: "index_appointments_on_health_professional_user_id"
     t.index ["patient_user_id"], name: "index_appointments_on_patient_user_id"
+    t.index ["treatment_id"], name: "index_appointments_on_treatment_id"
   end
 
   create_table "exams", force: :cascade do |t|
     t.string "name"
-    t.text "description"
+    t.string "description"
     t.datetime "date"
     t.string "place"
     t.bigint "appointment_id", null: false
@@ -78,7 +80,8 @@ ActiveRecord::Schema.define(version: 2020_12_12_002824) do
     t.text "description"
     t.string "place"
     t.datetime "date"
-    t.integer "kind"
+    t.string "kind"
+    t.string "kind_treatment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
@@ -103,6 +106,7 @@ ActiveRecord::Schema.define(version: 2020_12_12_002824) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "appointments", "treatments"
   add_foreign_key "exams", "appointments"
   add_foreign_key "exams", "users"
   add_foreign_key "shared_histories", "appointments"
