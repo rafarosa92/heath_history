@@ -57,11 +57,11 @@
 
   <!-- Heading -->
   <div class="sidebar-heading">
-    Addons
+    Outras Informações
   </div>
 
   <!-- Nav Item - Pages Collapse Menu -->
-  <%= nav_context :pages, "Pages", icon: "folder" do %>
+  <%= nav_context :history, "Meu Histórico", icon: "folder" do %>
     <h6 class="collapse-header">Login Screens:</h6>
     <%= active_link_to "Login", root_path(), class: "collapse-item" %>
     <%= active_link_to "Register", root_path(), class: "collapse-item" %>
@@ -89,6 +89,17 @@
 
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    Configurações
+  </div>
+
+  <%= nav_context :users, "Usuários", icon: "file", active_link: active_appointments do %>
+    <h6 class="collapse-header">Informação Usuário:</h6>
+    <%= active_link_to "Listar Usuários", users_path(), class: "collapse-item" %>
+    <%= active_link_to "Cadastrar Usuário", new_user_path(), class: "collapse-item" %>
+  <% end %>  
 
   <!-- Sidebar Toggler (Sidebar) -->
   <div class="text-center d-none d-md-inline">

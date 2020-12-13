@@ -9751,7 +9751,7 @@ body {
   height: 100%;
 }
 
-a:focus {
+a:focus {https://source.unsplash.com/K4mSJ7kc0As/600x800
   outline: none;
 }
 
@@ -9829,7 +9829,7 @@ a:focus {
 .animated--grow-in, .sidebar .nav-item .collapse {
   -webkit-animation-name: growIn;
   animation-name: growIn;
-  -webkit-animation-duration: 200ms;
+  -webkit-animation-duration: 200ms;https://source.unsplash.com/K4mSJ7kc0As/600x800
   animation-duration: 200ms;
   -webkit-animation-timing-function: transform cubic-bezier(0.18, 1.25, 0.4, 1), opacity cubic-bezier(0, 1, 0.4, 1);
   animation-timing-function: transform cubic-bezier(0.18, 1.25, 0.4, 1), opacity cubic-bezier(0, 1, 0.4, 1);
@@ -9845,7 +9845,7 @@ a:focus {
 }
 
 @keyframes fadeIn {
-  0% {
+  0% {https://source.unsplash.com/K4mSJ7kc0As/600x800
     opacity: 0;
   }
   100% {
@@ -10824,19 +10824,19 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800");
+  background: url("https://source.unsplash.com/k7ll1hpdhFA/600x800");
   background-position: center;
   background-size: cover;
 }
 
 .bg-register-image {
-  background: url("https://source.unsplash.com/Mv9hjnEUHR4/600x800");
+  background: url("https://source.unsplash.com/cQ8FfVNvbew/600x800");
   background-position: center;
   background-size: cover;
 }
 
 .bg-password-image {
-  background: url("https://source.unsplash.com/oWTW-jNGl9I/600x800");
+  background: url("https://source.unsplash.com/yo01Z-9HQAw/600x800");
   background-position: center;
   background-size: cover;
 }
