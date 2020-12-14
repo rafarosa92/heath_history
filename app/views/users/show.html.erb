@@ -1,34 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<div class="container-fluid">
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#">Visualizando Cadastro Usuário</a>
+    </li>
+    <li class="breadcrumb-item active"><%= @user.name %></li>
+  </ol>     
 
-<p>
-  <strong>Password confirmation:</strong>
-  <%= @user.password_confirmation %>
-</p>
+  <table class="table table-bordered mg-b-0">	
+    <tbody>
+      <tr>
+        <th class="wd-30p">Nome</th>
+        <td><%= @user.name %></td>
+      </tr>    
+      <tr>
+        <th class="wd-30p">E-mail</th>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <th class="wd-30p">Senha</th>
+        <td><%= @user.password %></td>
+      </tr>													
+      <tr>
+        <th class="wd-30p">Confirmação Senha</th>
+        <td><%= @user.password_confirmation %></td>
+      </tr>
+      <tr>
+        <th class="wd-30p">Data Aniversário</th>
+        <td><%=l @user.birthdate %></td>
+      </tr>
+      <tr>
+        <th class="wd-30p">Tipo Permissão</th>
+        <td><%= @user.kind %></td>
+      </tr>
+      <tr>
+        <th class="wd-30p">Data Cadastro</th>
+        <td><%=l @user.created_at, format: :long %></td>
+      </tr>
+      <tr>
+        <th class="wd-30p">Data Atualização</th>
+        <td><%=l @user.updated_at, format: :long%></td>
+      </tr>
+    </tbody>
+  </table>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+  <%= link_to "Editar", edit_user_path(@user), class: "btn btn-info btn-margin" %>
+  <%= link_to "VOLTAR", users_path, class: "btn btn-secondary btn-margin", title: "Voltar" %>
 
-<p>
-  <strong>Birthdate:</strong>
-  <%= @user.birthdate %>
-</p>
-
-<p>
-  <strong>Kind:</strong>
-  <%= @user.kind %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</div>
