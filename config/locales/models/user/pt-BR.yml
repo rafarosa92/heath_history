@@ -13,7 +13,7 @@ pt-BR:
         password_confirmation: Confirmação de senha
         kind: Tipo
         kinds:
-          patitent: Paciente
+          patient: Paciente
           health_professional: Profissional da Saúde
           admin: Administrador
 
