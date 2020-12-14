@@ -25,11 +25,9 @@
                       <tr>
                         <th colspan="1"></th>
                         <th>Email</th>
-                        <th>Password</th>
-                        <th>Password confirmation</th>
-                        <th>Name</th>
-                        <th>Birthdate</th>
-                        <th>Kind</th>
+                        <th>Nome</th>
+                        <th>Data de Aniversario</th>
+                        <th>Tipo</th>
                       </tr>
                     </thead>
 
@@ -45,11 +43,9 @@
                             <% end %>
                           </td>
                         <td class="align-middle"><%= user.email %></td>
-                        <td class="align-middle"><%= user.password %></td>
-                        <td class="align-middle"><%= user.password_confirmation %></td>
                         <td class="align-middle"><%= user.name %></td>
-                        <td class="align-middle"><%= user.birthdate %></td>
-                        <td class="align-middle"><%= user.kind %></td>
+                        <td class="align-middle"><%= user.birthdate.try(:strftime, '%d/%m/%Y') %></td>
+                        <td class="align-middle"><%= User.human_enum_name(:kinds, user.kind) %></td>
                         </tr>
 
 
