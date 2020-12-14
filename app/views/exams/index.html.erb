@@ -45,9 +45,14 @@
                           <td class="align-middle"><%= exam.date.strftime('%d/%m/%Y %H:%M') %></td>
                           <td class="align-middle"><%= exam.place %></td>
                           <td class="align-middle text-center">
+                            <%= link_to exam_path(exam), :class => "text-info uppercase" do %>
+                              <%= icon('fas', 'search') %>
+                            <% end %>
+                            
                             <%= link_to edit_exam_path(exam), :class => "text-info uppercase" do %>
                               <%= icon('fas', 'pencil-alt', class: 'strong') %>
                             <% end %>
+
                             <%= link_to exam, method: :delete, data: { confirm: 'Você tem certeza?' }, :class => "text-danger uppercase ml-4" do %>
                               <%= icon('fas', 'trash', class: 'strong') %>
                             <% end %>

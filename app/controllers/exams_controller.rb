@@ -1,34 +1,26 @@
 class ExamsController < ApplicationController
-  before_action :set_exam, only: [:show, :edit, :update, :destroy]
+  before_action :set_exam, only: %i[show edit update destroy]
 
-  # GET /exams
-  # GET /exams.json
   def index
     @exams = Exam.all
   end
 
-  # GET /exams/1
-  # GET /exams/1.json
-  def show
-  end
+  def show; end
 
-  # GET /exams/new
   def new
     @exam = Exam.new
   end
 
-  # GET /exams/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /exams
-  # POST /exams.json
   def create
     @exam = Exam.new(exam_params)
 
+    attach_files(params[:exam][:documents])
+
     respond_to do |format|
       if @exam.save
-        format.html { redirect_to @exam, notice: 'Exam was successfully created.' }
+        format.html { redirect_to @exam, notice: 'Exame criado com sucesso.' }
         format.json { render :show, status: :created, location: @exam }
       else
         format.html { render :new }
@@ -37,12 +29,10 @@ class ExamsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /exams/1
-  # PATCH/PUT /exams/1.json
   def update
     respond_to do |format|
       if @exam.update(exam_params)
-        format.html { redirect_to @exam, notice: 'Exam was successfully updated.' }
+        format.html { redirect_to @exam, notice: 'Exame atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @exam }
       else
         format.html { render :edit }
@@ -51,24 +41,25 @@ class ExamsController < ApplicationController
     end
   end
 
-  # DELETE /exams/1
-  # DELETE /exams/1.json
   def destroy
     @exam.destroy
     respond_to do |format|
-      format.html { redirect_to exams_url, notice: 'Exam was successfully destroyed.' }
+      format.html { redirect_to exams_url, notice: 'Exame removido com sucesso.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_exam
-      @exam = Exam.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def exam_params
-      params.require(:exam).permit(:user_id, :appointment_id, :name, :description, :date, :place)
-    end
+  def attach_files(documents)
+    @exam.documents.attach(documents)
+  end
+
+  def set_exam
+    @exam = Exam.find(params[:id])
+  end
+
+  def exam_params
+    params.require(:exam).permit(:user_id, :appointment_id, :name, :description, :date, :place, :documents)
+  end
 end
