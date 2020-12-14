@@ -1,3 +1,9 @@
 //= require jquery3
 //= require jquery_ujs
-//= require_tree .
+//= require bootstrap.bundle
+//= require jquery.easing
+//= require chart
+//= require data-table
+//= require chart-pie-demo
+//= require sb-admin-2
+// require_tree .
