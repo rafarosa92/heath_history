@@ -45,7 +45,7 @@
 
               <p>
                 <strong>Documento:</strong>
-                <%= link_to @treatment.document.filename, url_for(@treatment.document) if @treatment.document.attached? %>
+                <%= link_to @treatment.documents.filename, url_for(@treatment.documents) if @treatment.documents.attached? %>
               </p>
             </div>
           </div>
