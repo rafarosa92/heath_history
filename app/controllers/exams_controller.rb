@@ -30,6 +30,8 @@ class ExamsController < ApplicationController
   end
 
   def update
+    attach_files(params[:exam][:documents])
+
     respond_to do |format|
       if @exam.update(exam_params)
         format.html { redirect_to @exam, notice: 'Exame atualizado com sucesso.' }
