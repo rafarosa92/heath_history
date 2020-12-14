@@ -45,6 +45,10 @@
                           <td class="align-middle"><%= appointment.date.strftime('%d/%m/%Y %H:%M') %></td>
                           <td class="align-middle"><%= appointment.return_date.strftime('%d/%m/%Y %H:%M') %></td>
                           <td class="align-middle text-center">
+                            <%= link_to appointment_path(appointment), :class => "text-info uppercase" do %>
+                              <%= icon('fas', 'search') %>
+                            <% end %>
+
                             <%= link_to edit_appointment_path(appointment), :class => "text-info uppercase" do %>
                               <%= icon('fas', 'pencil-alt', class: 'strong') %>
                             <% end %>

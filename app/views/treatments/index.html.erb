@@ -47,6 +47,10 @@
                           <td class="align-middle"><%= treatment.date.strftime('%d/%m/%Y %H:%M') %></td>
                           <td class="align-middle"><%= treatment.kind.titleize %></td>
                           <td class="align-middle text-center">
+                            <%= link_to treatment_path(treatment), :class => "text-info uppercase" do %>
+                              <%= icon('fas', 'search') %>
+                            <% end %>
+
                             <%= link_to edit_treatment_path(treatment), :class => "text-info uppercase" do %>
                               <%= icon('fas', 'pencil-alt', class: 'strong') %>
                             <% end %>

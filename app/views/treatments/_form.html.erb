@@ -64,6 +64,13 @@
   </div>
 
   <div class="row">
+    <div class="field col-12 col-md-4 mt-3">
+      <%= f.label :document, "Documento" %>
+      <%= f.file_field :document, multiple: false %>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col-12 mt-5">
       <div class="actions btn-group">
         <%= link_to treatments_path, :class => "btn btn-outline-secondary text-uppercase" do %>
