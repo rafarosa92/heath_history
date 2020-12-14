@@ -3,6 +3,7 @@ class Appointment < ApplicationRecord
   belongs_to :patient_user, foreign_key: 'patient_user_id', class_name: 'User'
 
   has_many_attached :prescriptions
+  has_many :exams 
 
   validates :title, :date, :return_date, :health_professional_user_id, :patient_user_id, presence: true
 
