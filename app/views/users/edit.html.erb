@@ -1,0 +1,30 @@
+<section id="edit-users" >
+  <div class="container">
+
+  	<ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <%= link_to "Listar Usuários", users_path %>
+      </li>
+      <li class="breadcrumb-item active">Editar Cadastro Usuário</li>
+    </ol>
+
+    <div class="row mt-2">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <p class="mb-0 text-uppercase gray float-right">Editar
+              <strong><%= @user.model_name.human %>
+            </p>
+          </div>
+          <div class="card-body pt-0">
+            <div class="row">
+              <div class="col-12">
+                <%= render 'form', user: @user %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
