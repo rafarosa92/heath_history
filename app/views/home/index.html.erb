@@ -118,22 +118,17 @@
                     </thead>
 
                     <tbody>
-                      <% @appointments.each do |appointment| %>
+                      <% @all.each do |all| %>
                         <tr>
-                          <td class="align-middle"><%= appointment.title %></td>
-                          <td class="align-middle"><%= appointment.health_professional_user.name %></td>
-                          <td class="align-middle"><%= appointment.patient_user.name %></td>
+                          <td class="align-middle"><%= all["tipo"] %></td>
+                          <td class="align-middle"><%= all["titulo"] %></td>
+                          <td class="align-middle"><%= all["data"] %></td>
                           <td class="align-middle text-center">
-                            <%= link_to appointment_path(appointment), :class => "text-info uppercase" do %>
+													
+                            <%= link_to all["link"], :class => "text-info uppercase" do %>
                               <%= icon('fas', 'search') %>
                             <% end %>
-
-                            <%= link_to edit_appointment_path(appointment), :class => "text-info uppercase ml-4" do %>
-                              <%= icon('fas', 'pencil-alt', class: 'strong') %>
-                            <% end %>
-                            <%= link_to appointment, method: :delete, data: { confirm: 'Você tem certeza?' }, :class => "text-danger uppercase ml-4" do %>
-                              <%= icon('fas', 'trash', class: 'strong') %>
-                            <% end %>
+														
                           </td>
                         </tr>
                       <% end %>
@@ -141,7 +136,6 @@
                     </tbody>
                   </table>
 
-                  <%= "Nenhuma consulta encontrada!" if @appointments.blank? %>
                 </div>
               </div>
           </div>
