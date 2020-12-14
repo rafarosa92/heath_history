@@ -5,16 +5,16 @@ pt-BR:
         one: Usuário
         other: Usuário
     attributes:
-      exam:
+      user:
         name: Nome
         email: E-Mail
         birthdate: Data de Nascimento
         password: Senha
         password_confirmation: Confirmação de senha
         kind: Tipo
-      exam/kind:
-        patitent: Paciente
-        health_professional: Profissional da Saúde
-        admin: Administrador
+        kinds:
+          patitent: Paciente
+          health_professional: Profissional da Saúde
+          admin: Administrador
 
 

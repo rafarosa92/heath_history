@@ -1,0 +1,60 @@
+<section id="home-users">
+  <div class="container-fluid">
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <span class="float-right">
+              <%= link_to "Adicionar #{ @users.model_name.human }", new_user_path(), class: "btn btn-outline-secondary btn-sm text-uppercase float-right"%>
+            </span>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12">
+                <div class= "table-responsive">
+                  <table class="table table-striped table-bordered data-table nowrap w-100">
+                    <thead>
+                      <tr>
+                        <th colspan="1"></th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Password confirmation</th>
+                        <th>Name</th>
+                        <th>Birthdate</th>
+                        <th>Kind</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <% @users.each do |user| %>
+                        <tr>
+                          <td class="align-middle text-center">
+                            <%= link_to edit_user_path(user), :class => "text-info uppercase" do %>
+                              <%= icon('fas', 'pencil-alt', class: 'strong') %>
+                            <% end %>
+                            <%= link_to user, method: :delete, data: { confirm: 'Você tem certeza?' }, :class => "text-danger uppercase ml-4" do %>
+                              <%= icon('fas', 'trash', class: 'strong') %>
+                            <% end %>
+                          </td>
+                        <td class="align-middle"><%= user.email %></td>
+                        <td class="align-middle"><%= user.password %></td>
+                        <td class="align-middle"><%= user.password_confirmation %></td>
+                        <td class="align-middle"><%= user.name %></td>
+                        <td class="align-middle"><%= user.birthdate %></td>
+                        <td class="align-middle"><%= user.kind %></td>
+                        </tr>
+
+
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
