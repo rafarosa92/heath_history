@@ -4,5 +4,5 @@ class Exam < ApplicationRecord
 
   has_many_attached :documents
 
-  validates :name, :date, :place, :description, :kind, presence: true
+  validates :name, :date, :place, :description, presence: true
 end

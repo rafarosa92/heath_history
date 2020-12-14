@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @appointment.title %>
@@ -25,5 +23,6 @@
   <%= @appointment.return_date %>
 </p>
 
-<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
-<%= link_to 'Back', appointments_path %>
+<%= link_to appointments_path, :class => "btn btn-outline-secondary text-uppercase" do %>
+  <%= icon('fas', 'arrow-circle-left', 'Voltar', class: 'strong') %>
+<% end %>

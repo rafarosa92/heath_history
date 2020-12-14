@@ -19,24 +19,32 @@
       <%= f.label :title, "Título" %>
       <%= f.text_field :title, class: "form-control" %>
     </div>
+  </div>
 
+  <div class="row">
     <div class="field col-12 col-md-4 mt-3">
       <%= f.label :health_professional_user_id, "Profissional da saúde" %>
       <%= f.collection_select(:health_professional_user_id, User.where(kind: :health_professional), :id, :name, { include_blank: 'Selecione um profissional da saúde' }, class: "form-control") %>
     </div>
+  </div>
 
+  <div class="row">
     <div class="field col-12 col-md-4 mt-3">
       <%= f.label :patient_user_id, "Paciente" %>
       <%= f.collection_select(:patient_user_id, User.where(kind: :patient), :id, :name, { include_blank: 'Selecione um paciente' }, class: "form-control") %>
     </div>
+  </div>
 
+  <div class="row">
     <div class="field col-12 col-md-4 mt-3">
-      <%= f.label :date, "Data" %>
+      <%= f.label :date, "Data" %><br>
       <%= f.datetime_select :date, class: "form-control" %>
     </div>
+  </div>
 
+  <div class="row">
     <div class="field col-12 col-md-4 mt-3">
-      <%= f.label :return_date, "Data de retorno" %>
+      <%= f.label :return_date, "Data de retorno" %><br>
       <%= f.datetime_select :return_date, class: "form-control" %>
     </div>
   </div>

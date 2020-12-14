@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>User:</strong>
   <%= @exam.user_id %>
@@ -30,5 +28,6 @@
   <%= @exam.place %>
 </p>
 
-<%= link_to 'Edit', edit_exam_path(@exam) %> |
-<%= link_to 'Back', exams_path %>
+<%= link_to exams_path, :class => "btn btn-outline-secondary text-uppercase" do %>
+  <%= icon('fas', 'arrow-circle-left', 'Voltar', class: 'strong') %>
+<% end %>
