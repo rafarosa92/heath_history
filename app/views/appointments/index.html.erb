@@ -1,0 +1,75 @@
+<section id="home-appointments">
+
+  <div class="container-fluid">
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <%= link_to "Consultas", appointments_path %>
+      </li>
+      <li class="breadcrumb-item active">Listar Consultas</li>
+    </ol>
+
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <span class="float-right">
+              <%= link_to "Adicionar #{@appointments.model_name.human}", new_appointment_path,
+                class: "btn btn-outline-success btn-sm text-uppercase float-right" %>
+            </span>
+          </div>
+          <div class="card-body">
+            <%= render "layouts/shared/bootstrap_messages" %>
+
+            <div class="row">
+              <div class="col-12">
+                <div class= "table-responsive">
+                  <table class="table table-hover data-table nowrap w-100">
+                    <thead>
+                      <tr>
+                        <th>Título</th>
+                        <th>Profissional da saúde</th>
+                        <th>Paciente</th>
+                        <th>Data</th>
+                        <th>Data de retorno</th>
+                        <th colspan="1"></th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <% @appointments.each do |appointment| %>
+                        <tr>
+                          <td class="align-middle"><%= appointment.title %></td>
+                          <td class="align-middle"><%= appointment.health_professional_user.name %></td>
+                          <td class="align-middle"><%= appointment.patient_user.name %></td>
+                          <td class="align-middle"><%= appointment.date.strftime('%d/%m/%Y %H:%M') %></td>
+                          <td class="align-middle"><%= appointment.return_date.strftime('%d/%m/%Y %H:%M') %></td>
+                          <td class="align-middle text-center">
+                            <%= link_to appointment_path(appointment), :class => "text-info uppercase" do %>
+                              <%= icon('fas', 'search') %>
+                            <% end %>
+
+                            <%= link_to edit_appointment_path(appointment), :class => "text-info uppercase" do %>
+                              <%= icon('fas', 'pencil-alt', class: 'strong') %>
+                            <% end %>
+                            <%= link_to appointment, method: :delete, data: { confirm: 'Você tem certeza?' }, :class => "text-danger uppercase ml-4" do %>
+                              <%= icon('fas', 'trash', class: 'strong') %>
+                            <% end %>
+                          </td>
+                        </tr>
+                      <% end %>
+
+                    </tbody>
+                  </table>
+
+                  <%= "Nenhuma consulta encontrada!" if @appointments.blank? %>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

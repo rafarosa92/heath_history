@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  devise_for :users
+
+  root to: 'home#index'
+  get 'home/index'
+
+  resources :appointments
+  resources :treatments
+  resources :shared_histories
+  resources :exams
+  resources :users
+  
 end

@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row mt-2">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <p class="mb-0 text-uppercase gray float-right">Exame <%= @appointment.title %></p>
+        </div>
+        <div class="card-body pt-0">
+          <div class="row">
+            <div class="col-12">
+              <p>
+                <strong>Título:</strong>
+                <%= @appointment.title %>
+              </p>
+
+              <p>
+                <strong>Profissional da saúde:</strong>
+                <%= @appointment.health_professional_user.name %>
+              </p>
+
+              <p>
+                <strong>Paciente:</strong>
+                <%= @appointment.patient_user.name %>
+              </p>
+
+              <p>
+                <strong>Data:</strong>
+                <%= @appointment.date.strftime('%d/%m/%Y %H:%M') %>
+              </p>
+
+              <p>
+                <strong>Data de retorno:</strong>
+                <%= @appointment.return_date.strftime('%d/%m/%Y %H:%M') %>
+              </p>
+
+              <p>
+                <strong>Documentos:</strong>
+                <% @appointment.prescriptions.each do |prescription| %>
+                  <%= link_to prescription.filename, url_for(prescription) %>
+                <% end %>
+              </p>
+            </div>
+          </div>
+
+          <%= link_to appointments_path, :class => "btn btn-outline-secondary text-uppercase" do %>
+            <%= icon('fas', 'arrow-circle-left', 'Voltar', class: 'strong') %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

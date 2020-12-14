@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="row mt-2">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <p class="mb-0 text-uppercase gray float-right">Exame <%= @treatment.title %></p>
+        </div>
+        <div class="card-body pt-0">
+          <div class="row">
+            <div class="col-12">
+              <p>
+                <strong>Consulta:</strong>
+                <%= @treatment.appointment.title %>
+              </p>
+
+              <p>
+                <strong>Paciente:</strong>
+                <%= @treatment.user.name %>
+              </p>
+
+              <p>
+                <strong>Título:</strong>
+                <%= @treatment.title %>
+              </p>
+
+              <p>
+                <strong>Descrição:</strong>
+                <%= @treatment.description %>
+              </p>
+
+              <p>
+                <strong>Local:</strong>
+                <%= @treatment.place %>
+              </p>
+
+              <p>
+                <strong>Data:</strong>
+                <%= @treatment.date.strftime('%d/%m/%Y %H:%M') %>
+              </p>
+
+              <p>
+                <strong>Tipo:</strong>
+                <%= @treatment.kind %>
+              </p>
+
+              <p>
+                <strong>Documento:</strong>
+                <%= link_to @treatment.document.filename, url_for(@treatment.document) if @treatment.document.attached? %>
+              </p>
+            </div>
+          </div>
+
+          <%= link_to treatments_path, :class => "btn btn-outline-secondary text-uppercase" do %>
+            <%= icon('fas', 'arrow-circle-left', 'Voltar', class: 'strong') %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

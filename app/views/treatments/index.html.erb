@@ -1,0 +1,76 @@
+<section id="home-treatments">
+  <div class="container-fluid">
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <%= link_to "Tratamentos", treatments_path %>
+      </li>
+      <li class="breadcrumb-item active">Listar Tratamentos</li>
+    </ol>
+
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <span class="float-right">
+              <%= link_to "Adicionar #{@treatments.model_name.human}", new_treatment_path, class: "btn btn-outline-success btn-sm text-uppercase float-right"%>
+            </span>
+          </div>
+          <div class="card-body">
+            <%= render "layouts/shared/bootstrap_messages" %>
+
+            <div class="row">
+              <div class="col-12">
+                <div class= "table-responsive">
+                  <table class="table table-hover data-table nowrap w-100">
+                    <thead>
+                      <tr>
+                        <th>Consulta</th>
+                        <th>Paciente</th>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Local</th>
+                        <th>Data</th>
+                        <th>Tipo</th>
+                        <th colspan="1"></th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <% @treatments.each do |treatment| %>
+                        <tr>
+                          <td class="align-middle"><%= treatment.appointment.title.titleize %></td>
+                          <td class="align-middle"><%= treatment.user.name.titleize %></td>
+                          <td class="align-middle"><%= treatment.title.titleize %></td>
+                          <td class="align-middle"><%= treatment.description.titleize %></td>
+                          <td class="align-middle"><%= treatment.place.titleize %></td>
+                          <td class="align-middle"><%= treatment.date.strftime('%d/%m/%Y %H:%M') %></td>
+                          <td class="align-middle"><%= treatment.kind.titleize %></td>
+                          <td class="align-middle text-center">
+                            <%= link_to treatment_path(treatment), :class => "text-info uppercase" do %>
+                              <%= icon('fas', 'search') %>
+                            <% end %>
+
+                            <%= link_to edit_treatment_path(treatment), :class => "text-info uppercase" do %>
+                              <%= icon('fas', 'pencil-alt', class: 'strong') %>
+                            <% end %>
+                            <%= link_to treatment, method: :delete, data: { confirm: 'Você tem certeza?' }, :class => "text-danger uppercase ml-4" do %>
+                              <%= icon('fas', 'trash', class: 'strong') %>
+                            <% end %>
+                          </td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+
+                  <%= "Nenhum tratamento encontrado!" if @treatments.blank? %>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

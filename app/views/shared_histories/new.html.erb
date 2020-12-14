@@ -1,0 +1,22 @@
+<section id="edit-shared_histories" >
+  <div class="container">
+    <div class="row mt-2">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <p class="mb-0 text-uppercase gray float-right">Novo
+              <strong><%= @shared_history.model_name.human %>
+            </p>
+          </div>
+          <div class="card-body pt-0">
+            <div class="row">
+              <div class="col-12">
+                <%= render 'form', shared_history: @shared_history %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

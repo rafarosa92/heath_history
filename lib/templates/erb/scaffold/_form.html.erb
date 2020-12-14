@@ -1,0 +1,38 @@
+<%%= form_with(model: @<%= singular_table_name %>, local: true) do |f| %>
+  <%% if @<%= singular_table_name %>.errors.any? %>
+    <div id="error_explanation">
+      <h2><%%= pluralize(@<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h2>
+
+      <ul>
+        <%% @<%= singular_table_name %>.errors.full_messages.each do |message| %>
+          <li><%%= message %></li>
+        <%% end %>
+      </ul>
+    </div>
+  <%% end %>
+
+  <div class="row">
+<% attributes.each do |attribute| -%>
+    <div class="field col-12 col-md-4 mt-3">
+  <% if attribute.password_digest? -%>
+    <%%= f.label :password %>
+    <%%= f.password_field :password, class: "form-control" %>
+  <% else -%>
+  <%%= f.label :<%= attribute.column_name %> %>
+    <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %>, class: "form-control" %>
+  <% end -%>
+</div>
+
+<% end -%>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center mt-5">
+      <div class="actions btn-group">
+        <%%= link_to <%= index_helper %>_path, :class => "btn btn-outline-primary text-uppercase" do %>
+          <%%= icon('fas', 'arrow-circle-left', 'Voltar', class: 'strong') %>
+        <%% end %>
+        <%%= f.button icon('fas', 'save', 'salvar', class: 'strong'), class: "btn btn-primary text-uppercase" %>
+      </div>
+    </div>
+  </div>
+<%% end %>

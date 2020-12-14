@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      shared_history:
+        one: Histórico Compartilhado
+        other: Históricos Compartilhados
+    attributes:
+      shared_history:
+        expiration_date: Data da expiração
+        appointment_id: Consulta
+        shared_user_id: Compartilhado com
+        owner_user_id: Usuário

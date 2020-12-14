@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      appointment:
+        one: Consulta
+        other: Consultas
+    attributes:
+      appointment:
+        title: Título
+        date: Data da Consulta
+        return_date: Data do Retorno
+        health_professional_user_id: Profissional da Saúde
+        patient_user_id: Usuário
+        prescriptions: Prescrição
