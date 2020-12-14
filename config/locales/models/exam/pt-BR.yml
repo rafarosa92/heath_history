@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      exam:
+        one: Exame
+        other: Exames
+    attributes:
+      exam:
+        appointment_id: Consulta
+        user_id: Usuário
+        name: Nome
+        description: Descrição
+        date: Data
+        place: Local
+        documents: Anexos

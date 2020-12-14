@@ -16,7 +16,11 @@ module HeathHistory
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-	config.assets.enabled = true
-	config.assets.paths << Rails.root.join('app', 'assets', 'fonts')    
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :'pt-BR'
+    config.time_zone = 'Brasilia'
+
+    config.assets.enabled = true
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
 end
