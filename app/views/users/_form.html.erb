@@ -12,15 +12,16 @@
 <% end %>
 
 <div class="row">
-
-
   <div class="field col-12 col-md-6 mt-3">
-    <p>
-      <strong> Avatar: </strong>
-      <%= image_tag @user.avatar, class: 'img-profile rounded-circle picture-src', id: 'wizardPicturePreview', :size => "120x120" unless @user.avatar.blank? %>
-    </p>
-    <%= f.file_field :avatar, class: "form-control" %>
+  <p>
+    <strong> Avatar: </strong>
+    <%= image_tag @user.avatar, class: 'img-profile rounded-circle picture-src', id: 'wizardPicturePreview', :size => "120x120" unless @user.avatar.blank? %>
+  </p>
+  <%= f.file_field :avatar, class: "form-control" %>
   </div>
+</div>
+
+<div class="row">
 
   <div class="field col-12 col-md-6 mt-3">
     <%= f.label :kind %>

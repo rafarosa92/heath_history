@@ -13,7 +13,9 @@
         <div class="card">
           <div class="card-header">
             <span class="float-right">
-              <%= link_to "Adicionar #{ @users.model_name.human }", new_user_path(), class: "btn btn-outline-secondary btn-sm text-uppercase float-right"%>
+            <% if can? :create, @user %>
+                <%= link_to "Adicionar #{ @users.model_name.human }", new_user_path(), class: "btn btn-outline-secondary btn-sm text-uppercase float-right"%>
+              <% end %>
             </span>
           </div>
           <div class="card-body">

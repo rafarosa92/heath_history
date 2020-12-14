@@ -13,6 +13,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'font-awesome-rails'
 gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
 gem 'jquery-rails'
+gem 'cancancan'
+
 
 # DEPLOY
 gem 'capistrano', '~> 3.11'
