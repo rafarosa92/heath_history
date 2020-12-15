@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
   # before_action :authorize_admin, only: :create
   before_action :set_user, only: %i[show edit update destroy]
 

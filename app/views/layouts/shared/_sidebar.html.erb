@@ -91,7 +91,11 @@
   <%= nav_context :users, "Usuários", icon: "file", active_link: active_appointments do %>
     <h6 class="collapse-header">Informação Usuário:</h6>
     <%= active_link_to "Listar Usuários", users_path(), class: "collapse-item" %>
-    <%= active_link_to "Cadastrar Usuário", new_user_path(), class: "collapse-item" %>
+    
+    <% if can? :create, User %>
+      <%= active_link_to "Cadastrar Usuário", new_user_path(), class: "collapse-item" %>
+    <% end %>
+
   <% end %>  
 
   <!-- Sidebar Toggler (Sidebar) -->
