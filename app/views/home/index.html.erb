@@ -13,14 +13,14 @@
 	</div>
 
 	<!-- Nav Item - Pages Collapse Menu -->
-  <% active_appointments = active_link?(includes: ["appointments"]) %>
-  <% active_exams = active_link?(includes: ["exams"]) %>
-  <% active_treatments = active_link?(includes: ["treatments"]) %>
+  	<% active_appointments = active_link?(includes: ["appointments"]) %>
+  	<% active_exams = active_link?(includes: ["exams"]) %>
+  	<% active_treatments = active_link?(includes: ["treatments"]) %>
 
 	<!-- Content Row -->
 	<div class="row">
 
-		<!-- Pending Requests Card Example -->
+		<!-- Pending Requests Card Consultas -->
 		<div class="col-xl-4 col-md-6 mb-4">
 			<div class="card border-left-secondary shadow h-100">
 				<div class="card-body">
@@ -32,7 +32,7 @@
 
 				<% @appointments.each do |appointment| %>
 
-					<div class="my-0 py-2 card-body <%= cycle("bg-light", "") %> align-top">
+					<div class="my-0 py-2 card-body align-top <%= cycle("bg-light", "") %>">
 						<p class="text-muted my-0">
 							<%= appointment.title %>
 						</p>
@@ -45,7 +45,7 @@
 			</div>
 		</div>
 
-		<!-- Pending Requests Card Example -->
+		<!-- Pending Requests Card Exames -->
 		<div class="col-xl-4 col-md-6 mb-4">
 			<div class="card border-left-primary shadow h-100">
 				<div class="card-body">
@@ -68,7 +68,7 @@
 			</div>
 		</div>
 
-		<!-- Pending Requests Card Example -->
+		<!-- Pending Requests Card Tratamentos -->
 		<div class="col-xl-4 col-md-6 mb-4">
 			<div class="card border-left-secondary shadow h-100">
 				<div class="card-body">
@@ -132,15 +132,12 @@
                           </td>
                         </tr>
                       <% end %>
-
                     </tbody>
                   </table>
-
                 </div>
               </div>
           </div>
-
-				
+				</div>
 			</div>
 		</div>
 	</div>
@@ -185,7 +182,7 @@
 
 		</div>
 
-		<div class="col-xl-12 col-lg-6 mb-4">
+		<div class="col-xl-12 col-lg-6 mb-2">
 
 			<!-- Illustrations -->
 			<div class="card shadow mb-4">
@@ -223,7 +220,7 @@
 		</div>
 	</div>
 
-</div>
+
 
 <!--
 <h1>Home#index</h1>
