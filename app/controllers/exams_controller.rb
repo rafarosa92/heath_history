@@ -2,7 +2,13 @@ class ExamsController < ApplicationController
   before_action :set_exam, only: %i[show edit update destroy]
 
   def index
-    @exams = Exam.all
+    @exams = if current_user.patient?
+               Exam.where(user_id: current_user.id)
+             elsif current_user.health_professional?
+               Exam.joins(:appointment).where(appointment: { health_professional_user_id: current_user.id })
+             else
+               Exam.all
+             end
   end
 
   def show; end

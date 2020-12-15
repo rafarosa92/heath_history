@@ -49,7 +49,7 @@
                               <%= icon('fas', 'search') %>
                             <% end %>
 
-                            <%= link_to edit_appointment_path(appointment), :class => "text-info uppercase" do %>
+                            <%= link_to edit_appointment_path(appointment), :class => "text-info uppercase ml-4" do %>
                               <%= icon('fas', 'pencil-alt', class: 'strong') %>
                             <% end %>
                             <%= link_to appointment, method: :delete, data: { confirm: 'Você tem certeza?' }, :class => "text-danger uppercase ml-4" do %>

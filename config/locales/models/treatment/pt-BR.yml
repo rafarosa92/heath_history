@@ -8,11 +8,13 @@ pt-BR:
       treatment:
         title: Título
         description: Descrição
+        user_id: Paciente
+        appointment_id: Consulta
         place: Local
         kind: Tipo
         date: Data
-        document: Anexo
-      treatment/kind:
+        documents: Anexos
+        kinds:
           medicine: Medicamento
           physiotherapy: Fisioterapia
           other: Outros
