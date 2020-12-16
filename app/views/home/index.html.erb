@@ -33,12 +33,14 @@
 				<% @appointments.each do |appointment| %>
 
 					<div class="my-0 py-2 card-body align-top <%= cycle("bg-light", "") %>">
-						<p class="text-muted my-0">
-							<%= appointment.title %>
-						</p>
-						<span class="text-xs pt-0">
-							<%= appointment.date.try(:strftime, "%d/%m/%Y" ) %>
-						</span>
+						<%= link_to appointment_path(appointment), :class => "text-muted" do %>
+							<p class="text-muted my-0">
+								<%= appointment.title %>
+							</p>
+							<span class="text-xs pt-0">
+								<%= appointment.date.try(:strftime, "%d/%m/%Y" ) %>
+							</span>
+						<%end %>
 					</div>
 					<%end %>
 
@@ -57,12 +59,14 @@
 				<% @exams.each do |exam| %>
 
 					<div class="my-0 py-2 card-body <%= cycle("bg-light", "") %> align-top">
-						<p class="text-muted my-0">
-							<%= exam.name %>
-						</p>
-						<span class="text-xs pt-0">
-							<%= exam.date.try(:strftime, "%d/%m/%Y" ) %>
-						</span>
+						<%= link_to exam_path(exam), :class => "text-muted" do %>
+							<p class="text-muted my-0">
+								<%= exam.name %>
+							</p>
+							<span class="text-xs pt-0">
+								<%= exam.date.try(:strftime, "%d/%m/%Y" ) %>
+							</span>
+						<%end %>
 					</div>
 					<%end %>
 			</div>
@@ -80,12 +84,14 @@
 				<% @treatments.each do |treatment| %>
 
 					<div class="my-0 py-2 card-body <%= cycle("bg-light", "") %> align-top">
-						<p class="text-muted my-0">
-							<%= treatment.title %>
-						</p>
-						<span class="text-xs pt-0">
-							<%= treatment.date.try(:strftime, "%d/%m/%Y" ) %>
-						</span>
+						<%= link_to treatment_path(treatment), :class => "text-muted" do %>
+							<p class="text-muted my-0">
+								<%= treatment.title %>
+							</p>
+							<span class="text-xs pt-0">
+								<%= treatment.date.try(:strftime, "%d/%m/%Y" ) %>
+							</span>
+						<%end %>
 					</div>
 					<%end %>
 			</div>
@@ -120,6 +126,7 @@
                     <tbody>
                       <% @all.each do |all| %>
                         <tr>
+											
                           <td class="align-middle"><%= all["tipo"] %></td>
                           <td class="align-middle"><%= all["titulo"] %></td>
                           <td class="align-middle"><%= all["data"] %></td>
