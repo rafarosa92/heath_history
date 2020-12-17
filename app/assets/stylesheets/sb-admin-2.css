@@ -9862,7 +9862,7 @@ a:focus {
   100% {
     opacity: 1;
   }
-} */
+}
 
 .animated--fade-in {
   -webkit-animation-name: fadeIn;
