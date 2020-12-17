@@ -1,21 +1,20 @@
 <%= form_with(model: @exam, local: true) do |f| %>
 <% if @exam.errors.any? %>
-<div class="alert alert-danger">
-  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <div id="error_explanation">
-    <h2>Verifique os erros e tente novamente:</h2>
+  <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <div id="error_explanation">
+      <h2>Verifique os erros e tente novamente:</h2>
 
-    <ul>
-      <% @exam.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
+      <ul>
+        <% @exam.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-</div>
 <% end %>
 
 <div class="row">
-
 
   <div class="field col-12 col-md-4 mt-3">
     <%= f.label :name %>

@@ -6,7 +6,7 @@
     <div class="sidebar-brand-icon rotate-n-15">
       <i class="fas fa-laptop-medical"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+    <div class="sidebar-brand-text mx-3"><sup>Health History</sup></div>
   </a>
 
   <!-- Divider -->
@@ -52,33 +52,12 @@
     <%= active_link_to "Cadastrar Tratamentos", new_treatment_path(), class: "collapse-item" %>
   <% end %>
 
-  <!-- Divider -->
-  <hr class="sidebar-divider">
-
-  <!-- Heading -->
-  <div class="sidebar-heading">
-    Outras Informações
-  </div>
-
   <!-- Nav Item - Pages Collapse Menu -->
-  <%= nav_context :history, "Meu Histórico", icon: "file-alt" do %>
-    <h6 class="collapse-header">Login Screens:</h6>
-    <%= active_link_to "Login", root_path(), class: "collapse-item" %>
-    <%= active_link_to "Register", root_path(), class: "collapse-item" %>
-    <%= active_link_to "Forgot Password", root_path(), class: "collapse-item" %>
-    <div class="collapse-divider"></div>
-    <h6 class="collapse-header">Other Pages:</h6>
-    <%= active_link_to "404 Page", root_path(), class: "collapse-item" %>
-    <%= active_link_to "Blank Page", root_path(), class: "collapse-item" %>
+  <%= nav_context :history, "Histórico", icon: "file-alt" do %>
+    <%= active_link_to "Compartilhados Comigo", shared_histories_path, class: "collapse-item" %>
+    <%= active_link_to "Compartilhar", new_shared_history_path, class: "collapse-item" %>
+    <%= active_link_to "Meu Histórico", appointments_path, class: "collapse-item" %>
   <% end %>
-
-  <!-- Nav Item - Charts -->
-  <li class="nav-item <%= add_active_class(root_path()) %>">
-    <a class="nav-link" href="<%= root_path() %>">
-      <i class="fas fa-fw fa-share"></i>
-      <span>Históricos Compartilhados</span>
-    </a>
-  </li>
 
   <!-- Divider -->
   <hr class="sidebar-divider">
@@ -91,12 +70,12 @@
   <%= nav_context :users, "Usuários", icon: "file", active_link: active_appointments do %>
     <h6 class="collapse-header">Informação Usuário:</h6>
     <%= active_link_to "Listar Usuários", users_path(), class: "collapse-item" %>
-    
+
     <% if can? :create, User %>
       <%= active_link_to "Cadastrar Usuário", new_user_path(), class: "collapse-item" %>
     <% end %>
 
-  <% end %>  
+  <% end %>
 
   <!-- Sidebar Toggler (Sidebar) -->
   <div class="text-center d-none d-md-inline">
