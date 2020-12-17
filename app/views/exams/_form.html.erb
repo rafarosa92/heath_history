@@ -1,77 +1,79 @@
 <%= form_with(model: @exam, local: true) do |f| %>
-  <% if @exam.errors.any? %>
-    <div class="alert alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <div id="error_explanation">
-        <h2>Verifique os erros e tente novamente:</h2>
+<% if @exam.errors.any? %>
+  <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <div id="error_explanation">
+      <h2>Verifique os erros e tente novamente:</h2>
 
-        <ul>
-          <% @exam.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="row">
-    <div class="field col-12 col-md-4 mt-3">
-      <%= f.label :user_id, "Paciente" %>
-      <%= f.collection_select(:user_id, User.where(kind: :patient), :id, :name, {}, class: "form-control") %>
-    </div>
-
-  </div>
-
-  <div class="row">
-    <div class="field col-12 col-md-4 mt-3">
-      <%= f.label :appointment_id, "Consulta" %>
-      <%= f.collection_select(:appointment_id, Appointment.all, :id, :full_description, {}, class: "form-control") %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="field col-12 col-md-4 mt-3">
-      <%= f.label :name, "Nome" %>
-      <%= f.text_field :name, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="field col-12 col-md-4 mt-3">
-      <%= f.label :place, "Local" %>
-      <%= f.text_field :place, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="field col-12 col-md-4 mt-3">
-      <%= f.label :date, "Data" %><br>
-      <%= f.datetime_select :date, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="field col-12 col-md-4 mt-3">
-      <%= f.label :description, "Descrição" %>
-      <%= f.text_area :description, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="field col-12 col-md-4 mt-3">
-      <%= f.label :documents, "Documentos" %>
-      <%= f.file_field :documents, multiple: true %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12 mt-5">
-      <div class="actions btn-group">
-        <%= link_to exams_path, :class => "btn btn-outline-secondary text-uppercase" do %>
-          <%= icon('fas', 'arrow-circle-left', 'Voltar', class: 'strong') %>
+      <ul>
+        <% @exam.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
         <% end %>
-        <%= f.button icon('fas', 'save', 'salvar', class: 'strong'), class: "btn btn-success text-uppercase" %>
-      </div>
+      </ul>
     </div>
   </div>
+<% end %>
+
+<div class="row">
+
+  <div class="field col-12 col-md-4 mt-3">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="field col-12 col-md-4 mt-3">
+    <%= f.label :user_id%>
+    <%= f.select :user_id, options_for_select(user_patient_for_select(current_user)), {}, class: 'form-control' %>
+  </div>
+
+  <div class="field col-12 col-md-4 mt-3">
+    <%= f.label :appointment_id %>
+    <%= f.select :appointment_id, options_for_select(appointments_for_select(current_user)), {}, class: 'form-control' %>
+  </div>
+
+
+  <div class="field col-12 col-md-4 mt-3">
+    <%= f.label :place %>
+    <%= f.text_field :place, class: "form-control" %>
+  </div>
+
+  <div class="field col-12 col-md-4 mt-3">
+    <%= f.label :date %><br>
+    <%= f.datetime_field :date, class: "form-control" %>
+  </div>
+
+  <div class="field col-12 col-md-4 mt-3">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="field col-12 col-md-4 mt-3">
+
+    <div class="input-group mb-3">
+      <%= f.file_field :documents, multiple: true, class: 'form-control' %>
+      <%= f.label :documents, class:'input-group-text', for: "exam_documents" %>
+    </div>
+  </div>
+  <div class="field col-12 mt-5">
+
+    <h5>Anexos</h5>
+
+    <ul>
+      <% @exam.documents.each do |file| %>
+      <li>
+        <%= link_to "Anexo adicionado: #{l(file.created_at)}", url_for(file) %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
+<div class="col-12 mt-5 text-center">
+  <div class="actions btn-group">
+    <%= link_to exams_path, :class => "btn btn-outline-secondary text-uppercase" do %>
+    <%= icon('fas', 'arrow-circle-left', 'Voltar', class: 'strong') %>
+    <% end %>
+    <%= f.button icon('fas', 'save', 'salvar', class: 'strong'), class: "btn btn-success text-uppercase" %>
+  </div>
+</div>
 <% end %>

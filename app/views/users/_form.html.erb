@@ -1,0 +1,72 @@
+<%= form_with(model: @user, local: true, url:( action_name == 'new' ? create_user_path() : update_user_path(id: @user))) do |f| %>
+<% if @user.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="field col-12 col-md-6 mt-3">
+  <p>
+    <strong> Avatar: </strong>
+    <%= image_tag @user.avatar, class: 'img-profile rounded-circle picture-src', id: 'wizardPicturePreview', :size => "120x120" unless @user.avatar.blank? %>
+  </p>
+  <%= f.file_field :avatar, class: "form-control" %>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="field col-12 col-md-6 mt-3">
+    <%= f.label :kind %>
+    <%= f.select :kind, options_for_select(user_kinds_for_select()),{},  class: "form-control" %>
+  </div>
+
+  <div class="field col-12 col-md-6 mt-3">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+
+  <div class="field col-12 col-md-6 mt-3">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+
+  <div class="field col-12 col-md-6 mt-3">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %>
+  </div>
+
+  <div class="field col-12 col-md-6 mt-3">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+  </div>
+
+
+
+  <div class="field col-12 col-md-6 mt-3">
+    <%= f.label :birthdate %>
+    <%= f.date_field :birthdate, class: "form-control" %>
+  </div>
+
+
+
+</div>
+<div class="row">
+  <div class="col-12 text-center mt-5">
+    <div class="actions btn-group">
+      <%= link_to users_path, :class => "btn btn-outline-primary text-uppercase" do %>
+      <%= icon("fas", "arrow-circle-left", "Voltar", class: "strong") %>
+      <% end %>
+      <%= f.button icon("fas", "save", "salvar", class: "strong"), class: "btn btn-primary text-uppercase" %>
+    </div>
+  </div>
+</div>
+<% end %>

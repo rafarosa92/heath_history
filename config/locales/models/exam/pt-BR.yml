@@ -7,8 +7,8 @@ pt-BR:
     attributes:
       exam:
         appointment_id: Consulta
-        user_id: Usuário
-        name: Nome
+        user_id: Paciente
+        name: Nome do Exame
         description: Descrição
         date: Data
         place: Local

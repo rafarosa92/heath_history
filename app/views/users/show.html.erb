@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#">Visualizando Cadastro Usuário</a>
+    </li>
+    <li class="breadcrumb-item active"><%= @user.name %></li>
+  </ol>
+
+  <table class="table table-bordered mg-b-0">
+    <tbody>
+      <tr>
+        <th class="wd-30p">Nome</th>
+        <td><%= @user.name %></td>
+      </tr>
+      <tr>
+        <th class="wd-30p">E-mail</th>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <th class="wd-30p">Senha</th>
+        <td><%= @user.password %></td>
+      </tr>
+      <tr>
+        <th class="wd-30p">Confirmação Senha</th>
+        <td><%= @user.password_confirmation %></td>
+      </tr>
+      <tr>
+        <th class="wd-30p">Data Aniversário</th>
+        <td><%= @user.birthdate.try(:strftime, '%d/%m/%Y')%></td>
+      </tr>
+      <tr>
+        <th class="wd-30p">Tipo Permissão</th>
+        <td><%= @user.kind %></td>
+      </tr>
+      <tr>
+        <th class="wd-30p">Data Cadastro</th>
+        <td><%=l @user.created_at, format: :long %></td>
+      </tr>
+      <tr>
+        <th class="wd-30p">Data Atualização</th>
+        <td><%=l @user.updated_at, format: :long%></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= link_to "Editar", edit_user_path(@user), class: "btn btn-info btn-margin" %>
+  <%= link_to "VOLTAR", users_path, class: "btn btn-secondary btn-margin", title: "Voltar" %>
+
+</div>

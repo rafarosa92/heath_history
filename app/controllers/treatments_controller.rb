@@ -30,7 +30,7 @@ class TreatmentsController < ApplicationController
   end
 
   def update
-    attach_file(params[:treatment][:document])
+    attach_file(params[:treatment][:documents])
 
     respond_to do |format|
       if @treatment.update(treatment_params)
@@ -54,8 +54,8 @@ class TreatmentsController < ApplicationController
 
   private
 
-  def attach_file(document)
-    @treatment.document.attach(document)
+  def attach_file(documents)
+    @treatment.documents.attach(documents)
   end
 
   def set_treatment
@@ -63,6 +63,6 @@ class TreatmentsController < ApplicationController
   end
 
   def treatment_params
-    params.require(:treatment).permit(:appointment_id, :user_id, :title, :description, :place, :date, :kind, :document)
+    params.require(:treatment).permit(:appointment_id, :user_id, :title, :description, :place, :date, :kind, :documents)
   end
 end

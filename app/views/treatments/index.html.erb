@@ -51,7 +51,7 @@
                               <%= icon('fas', 'search') %>
                             <% end %>
 
-                            <%= link_to edit_treatment_path(treatment), :class => "text-info uppercase" do %>
+                            <%= link_to edit_treatment_path(treatment), :class => "text-info uppercase ml-4" do %>
                               <%= icon('fas', 'pencil-alt', class: 'strong') %>
                             <% end %>
                             <%= link_to treatment, method: :delete, data: { confirm: 'Você tem certeza?' }, :class => "text-danger uppercase ml-4" do %>
