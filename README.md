@@ -1,24 +1,21 @@
-# README
+# Health History
+> This app was developed for Bootcamp Hackaton.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Rails Version][npm-image]][npm-url]
+[![Ruby Version][travis-image]][travis-url]
 
-Things you may want to cover:
+One to two paragraph statement about your product and what it does.
 
-* Ruby version
+![](app1.PNG)
 
-* System dependencies
+![](app2.PNG)
 
-* Configuration
+![](app3.PNG)
 
-* Database creation
+## Installation
 
-* Database initialization
+OS X & Linux:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```sh
+git clone https://github.com/rafarosa92/heath_history.git
+```
