@@ -1,10 +1,8 @@
 # Health History
 > This app was developed for Bootcamp Hackaton.
 
-[![Rails Version][npm-image]][npm-url]
-[![Ruby Version][travis-image]][travis-url]
-
-One to two paragraph statement about your product and what it does.
+[![Rails Version]
+[![Ruby Version]
 
 ![](app1.PNG)
 
